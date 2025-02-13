@@ -6,7 +6,8 @@ import { assets } from '../../assets/assets'
 import { AppContext } from '../../context/AppContext'
 
 const Dashboard = () => {
-  const { aToken, getDashData, cancelAppointment, dashData } = useContext(AdminContext)
+  const { aToken,  cancelAppointment } = useContext(AdminContext)
+  const { dashData, getDashData } = useContext(AdminContext)
   const { slotDateFormat } = useContext(AppContext)
 
 
@@ -15,6 +16,8 @@ const Dashboard = () => {
       getDashData()
     }
   }, [aToken])
+
+  console.log(dashData)
 
   return dashData && (
     <div className='m-5'>
